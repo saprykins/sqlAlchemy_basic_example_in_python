@@ -35,15 +35,7 @@ session = Session()
 # ed_user = User(author='ed', creation_date='Ed Jones', modification_date='edsnickname')
 # session.add(ed_user)
 
-"""
-def get_doc_text_in_dictionary():
-    file_path = 'C:\_My_Files\_FA\_ETUDES\Python\py-code\sqlAlchemy_basic_example_in_python\kxlceaxpnqqvvbxs_text.txt'
-    with open(file_path) as feed:
-        text = feed.read()
-        doc_text_in_dictionary = {"text": text, }
-        return doc_text_in_dictionary
-msg_f = get_doc_text_in_dictionary()
-"""
+
 
 
 def get_doc_text_in_dictionary():
@@ -56,13 +48,6 @@ def get_doc_text_in_dictionary():
 
 msg_f = get_doc_text_in_dictionary()
 
-"""
-msg = 'hello world'
-msg_2 = '\n'
-msg_f = msg + msg_2 + msg
-msg_f = msg_f*10
-# print(msg)
-"""
 
 session.add_all([
     Pdf(author='wendy', creation_date='Wendy Williams',
