@@ -3,7 +3,8 @@ from sqlalchemy.orm import declarative_base
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import sessionmaker
 
-engine = create_engine('sqlite:///:memory:', echo=False)
+engine = create_engine('sqlite:///pdf.db', echo=False) # 
+connection = engine.connect() # 
 Base = declarative_base()
 
 
@@ -48,7 +49,7 @@ def get_doc_text_in_dictionary():
 
 msg_f = get_doc_text_in_dictionary()
 
-
+"""
 session.add_all([
     Pdf(author='wendy', creation_date='Wendy Williams',
         modification_date='windy', creator='me', status='ok', text='bla'),
@@ -58,9 +59,9 @@ session.add_all([
         modification_date='freddy', creator='me', status='ok', text='bla')
 ])
 session.commit()
+"""
 
-
-our_pdf = session.query(Pdf).filter_by(author='mary').first()
+our_pdf = session.query(Pdf).filter_by(author='fred').first()
 print(our_pdf.text)
 
 
